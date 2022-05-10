@@ -1,18 +1,10 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @user %>
-
-<div>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
-
-  <%= button_to "Destroy this user", @user, method: :delete %>
-</div>
-
 <div class="text-center">
   <h1><%= @user.name %></h1>
+</div>
 
-  <p class="buffer-top">
-    <%= link_to "Редактировать профиль", edit_user_path(@user),
-                class: 'btn btn-default' %>
-  </p>
+<div class="d-flex flex-row justify-content-around align-items-center mt-5">
+  <%= link_to "Edit profile", edit_user_path(@user), class: 'btn btn-outline-success' %>
+  <%= button_to 'Delete profile', event_path(@user), method: :delete,
+                form: { data: { turbo_confirm: 'Are you sure' } }, title: 'Delete profile',
+                class: 'btn btn-outline-danger' %>
 </div>

@@ -1,11 +1,29 @@
-<p style="color: green"><%= notice %></p>
+<div class="event container">
+  <div class="event-info row">
+    <div class="col-md-12">
+      <%= content_tag 'div', '', class: 'event-background',
+                      style: "background-image: url(#{asset_path('event.jpg')})" %>
 
-<%= render @event %>
+      <div class="event-info-inner row">
+        <div class="col-md-6">
+          <div class="event-description pt-3">
+            <h1><%= @event.title %></h1>
+            <h3><%= @event.datetime %></h3>
+            <h3><small><%= link_to @event.address,
+                                   "https://yandex.ru/maps/?text=#{@event.address}" %></small></h3>
+            <p><%= @event.description %></p>
+          </div>
 
-<div class="mt-4">
-  <%= link_to "Edit this event", edit_event_path(@event) %> |
-  <%= link_to "Back to events", events_path%>
-  <%= button_to 'Delete event', event_path(@event), method: :delete,
-                form: { data: { turbo_confirm: 'Are you sure' } }, title: 'Delete event', class: 'btn btn-danger
-                mt-5' %>
+          <div class="d-flex flex-row justify-content-start align-items-center my-3">
+            <%= link_to 'Edit this event', edit_event_path(@event),
+                        class: 'btn btn-primary me-3' %>
+            <%= button_to 'Delete event', event_path(@event), method: :delete,
+                          form: { data: { turbo_confirm: 'Are you sure' } }, title: 'Delete event',
+                          class: 'btn btn-danger' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+<%= link_to "Back to events", events_path, class: 'btn btn-outline-primary' %>
