@@ -14,13 +14,14 @@
 <%= render 'partials/navbar' %>
 <main class="flex-shrink-0">
   <div class="container">
-    <p class="mt-3 text-success"><%= notice %></p>
-  </div>
-  <div class="container">
+    <% if flash[:notice].present? %>
+      <p class="alert alert-success mt-3"><%= flash[:notice] %></p>
+    <% elsif flash[:alert].present? %>
+      <p class="alert alert-danger mt-3"><%= flash[:alert] %></p>
+    <% end %>
     <%= yield %>
   </div>
 </main>
-
 <footer class="footer mt-auto py-3 bg-light">
   <div class="container">
     <p>&copy; <%= t 'app.company' %> 2022</p>
