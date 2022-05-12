@@ -8,6 +8,9 @@ gem "rails", "~> 7.0.2", ">= 7.0.2.4"
 
 gem 'devise'
 
+gem 'devise-i18n'
+gem 'rails-i18n'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
