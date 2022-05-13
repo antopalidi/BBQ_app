@@ -1,9 +1,7 @@
 <%= form_with model: @user, html: { multipart: true }, data: { turbo: false } do |f| %>
-  <%= render partial: 'partials/errors', locals: { errors: @user.errors } %>
+  <%= render partial: 'partials/errors', locals: { model: @user } %>
 
   <div class="actions">
-    <%= render 'partials/errors', object: @user %>
-
     <div class="mb-2">
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %>
@@ -12,6 +10,12 @@
     <div class="mb-2">
       <%= f.label :email %>
       <%= f.text_field :email, class: 'form-control' %>
+    </div>
+
+    <div class="mb-2">
+      <%= f.label :avatar %>
+      <p><%= image_tag(@user.avatar.thumb.url) if @user.avatar? %></p>
+      <%= f.file_field :avatar %>
     </div>
 
     <div class="mb-2">

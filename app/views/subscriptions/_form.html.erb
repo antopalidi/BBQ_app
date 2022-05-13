@@ -1,5 +1,5 @@
 <%= form_with model: [@event, subscription], data: { turbo: false } do |f| %>
-  <%= render partial: 'partials/errors', locals: {errors: subscription.errors} %>
+  <%= render partial: 'partials/errors', locals: { model: subscription } %>
 
   <% unless user_signed_in? %>
     <div class="mb-2">

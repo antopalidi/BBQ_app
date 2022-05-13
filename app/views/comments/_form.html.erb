@@ -1,5 +1,5 @@
 <%= form_with model: [@event, comment], data: { turbo: false }, class: 'mb-4' do |f| %>
-  <%= render partial: 'partials/errors', locals: {errors: comment.errors} %>
+  <%= render partial: 'partials/errors', locals: {model: comment} %>
   <div class="mb-2">
     <%= f.label :body %>
     <%= f.text_area :body, class: 'form-control' %>

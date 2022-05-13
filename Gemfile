@@ -11,6 +11,10 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'rails-i18n'
 
+gem 'carrierwave'
+gem 'rmagick'
+gem 'fog-aws'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
