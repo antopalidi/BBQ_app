@@ -1,28 +1,28 @@
-<%= form_with model: event, data: { turbo: false } do |f| %>
-    <%= render 'partials/errors', object: @event %>
+<%= form_with model: @event, data: { turbo: false } do |f| %>
+  <%= render partial: 'partials/errors', locals: { errors: @event.errors } %>
 
-    <div class="mb-2">
-      <%= f.label :title %>
-      <%= f.text_field :title, class: 'form-control' %>
-    </div>
+  <div class="mb-2">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
 
-    <div class="mb-2">
-      <%= f.label :address %>
-      <%= f.text_field :address, class: 'form-control' %>
-    </div>
+  <div class="mb-2">
+    <%= f.label :address %>
+    <%= f.text_field :address, class: 'form-control' %>
+  </div>
 
-    <div class="mb-2">
-      <%= f.label :datetime %>
-      <p><%= f.datetime_select :datetime, class: 'form-control' %></p>
-    </div>
+  <div class="mb-2">
+    <%= f.label :datetime %>
+    <p><%= f.datetime_select :datetime, class: 'form-control' %></p>
+  </div>
 
-    <div class="mb-2">
-      <%= f.label :description %>
-      <%= f.text_area :description, class: 'form-control' %>
-    </div>
+  <div class="mb-2">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: 'form-control' %>
+  </div>
 
-    <div class="mb-2">
-      <%= f.submit 'Сохранить', class: 'btn btn-primary' %>
-    </div>
+  <div class="mb-2">
+    <%= f.submit 'Сохранить', class: 'btn btn-primary' %>
+  </div>
   </div>
 <% end %>

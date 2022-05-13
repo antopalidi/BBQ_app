@@ -1,5 +1,5 @@
-<%= form_with model: @subscription do |f| %>
-
+<%= form_with model: @subscription, data: { turbo: false } do |f| %>
+  <%= render partial: 'partials/errors', locals: {errors: subscription.errors} %>
 
   <% unless user_signed_in? %>
     <div class="form-group">
