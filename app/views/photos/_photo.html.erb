@@ -1,0 +1,5 @@
+<div class="event-photo mb-3">
+  <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url %>
+  <span>Добавил:</span>
+  <%= render partial: 'users/user', object: photo.user %>
+</div>
