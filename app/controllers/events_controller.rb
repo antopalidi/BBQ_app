@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, except: %i[show index]
   before_action :set_event, only: %i[show]
+  before_action :authenticate_user!, except: %i[show index]
   before_action :set_current_user_event, only: %i[edit update destroy]
 
   def index
@@ -8,6 +8,8 @@ class EventsController < ApplicationController
   end
 
   def show
+    @new_comment = @event.comments.build(params[:comment])
+    @new_subscription = @event.subscriptions.build(params[:subscription])
   end
 
   def new

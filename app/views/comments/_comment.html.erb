@@ -1,0 +1,19 @@
+<div class="mb-2 card">
+  <div class="card-body">
+    <div class="comment-block d-flex align-items-center mb-4">
+      <div class="user-block">
+        <% if comment.user.present? %>
+          <%= render partial: 'users/user', object: comment.user %>
+        <% else %>
+          <em><strong><%= comment.user_name %></strong></em>
+        <% end %>
+        <em><%= l comment.created_at, format: :short %></em>
+      </div>
+      <% if current_user_can_edit?(comment) %>
+        <%= button_to '❌', event_comment_path(comment.event, comment), method: :delete,
+                      form: { data: { turbo_confirm: t('.destroy_confirm') } }, title: 'Delete', class: 'btn btn-outline' %>
+      <% end %>
+    </div>
+    <p><%= comment.body %></p>
+  </div>
+</div>
