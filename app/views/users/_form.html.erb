@@ -1,5 +1,5 @@
-<%= form_with model: @user, data: { turbo: false }, html: {multipart: true} do |f| %>
-  <%= render partial: 'partials/errors', locals: {errors: @user.errors} %>
+<%= form_with model: @user, html: { multipart: true }, data: { turbo: false } do |f| %>
+  <%= render partial: 'partials/errors', locals: { errors: @user.errors } %>
 
   <div class="actions">
     <%= render 'partials/errors', object: @user %>
