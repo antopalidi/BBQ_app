@@ -18,8 +18,7 @@
         </div>
         <div>
           <% event.visitors.each do |user| %>
-            <%= content_tag 'div', '', class: 'event-background',
-                            style: "background-image: url(#{event_photo(event)})" %>
+            <%= image_tag user_avatar_thumb(user), class: 'img-icon', title: user.name %>
           <% end %>
         </div>
       </div>
