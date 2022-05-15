@@ -87,14 +87,19 @@ ru:
         action: 'Зарегистрироваться'
       password:
         edit:
-          title: 'Изменение пароля'
+          title: 'Измененить пароль'
           min: 'символов минимум'
         forgot:
           title: 'Забыли свой пароль?'
+        blank_password: 'оставьте поле пустым, если не хотите его менять.'
+        confirm_password: 'нам нужен ваш текущий пароль для подтверждения изменений'
+      profile:
+        editing_user: 'Изменить профиль'
     links:
       profile: 'Профиль'
       logout: 'Выйти'
       login: 'Войти'
+      back: 'Вернуться назад'
       register: 'Зарегистрироваться'
       password_reset: 'Изменить пароль'
       password_forgot: 'Забыли пароль?'
@@ -118,6 +123,7 @@ ru:
       edit_event: 'Редактировать событие'
       delete_event: 'Удалить событие'
       create_event: 'Создать событие'
+      update: 'Обновить'
     text:
       event:
         added: 'Добавил'

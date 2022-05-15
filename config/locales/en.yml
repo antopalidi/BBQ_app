@@ -49,6 +49,8 @@ en:
           min: 'characters minimum'
         forgot:
           title: 'Forgot your password?'
+        blank_password: "leave blank if you don't want to change it"
+        confirm_password: 'we need your current password to confirm your changes'
     links:
       profile: 'Profile'
       logout: 'Log out'

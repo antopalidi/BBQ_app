@@ -18,9 +18,10 @@
       <%= f.file_field :avatar %>
     </div>
 
-    <div class="mb-2">
+    <div class="my-4">
       <%= f.submit 'Save', class: 'btn btn-primary' %>
-      or <%= link_to 'Back', :back %>
     </div>
+    <br>
+    <%= link_to t('views.links.back'), :back %>
   </div>
 <% end %>
