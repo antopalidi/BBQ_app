@@ -124,6 +124,7 @@ ru:
       delete_event: 'Удалить событие'
       create_event: 'Создать событие'
       update: 'Обновить'
+      save: 'Сохранить данные'
     text:
       event:
         added: 'Добавил'
