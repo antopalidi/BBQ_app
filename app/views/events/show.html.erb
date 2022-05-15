@@ -64,14 +64,16 @@
         </p>
       </div>
     </div>
-    <div class="event-subscription-form">
-      <h4>Я пойду:</h4>
-      <div>
-        <%= render partial: 'subscriptions/form', locals: {
-          subscription: @new_subscription || @event.subscriptions.build
-        } %>
+    <% if !event_owner?(@event) %>
+      <div class="event-subscription-form">
+        <h4>Я пойду:</h4>
+        <div>
+          <%= render partial: 'subscriptions/form', locals: {
+            subscription: @new_subscription || @event.subscriptions.build
+          } %>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
 <%= link_to "Вернуться к событиям", events_path, class: 'btn btn-outline-primary' %>
