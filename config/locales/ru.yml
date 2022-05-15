@@ -69,3 +69,28 @@ ru:
   photos:
     photo:
       destroy_confirm: 'Вы уверены, что хотите удалить это фото?'
+
+  views:
+    users:
+      login:
+        title: 'Вход в приложение'
+        action: 'Войти'
+      signup:
+        title: 'Регистрация'
+        action: 'Зарегистрироваться'
+      password:
+        edit:
+          title: 'Изменение пароля'
+          min: 'символов минимум'
+        forgot:
+          title: 'Забыли свой пароль?'
+    links:
+      profile: 'Профиль'
+      logout: 'Выйти'
+      login: 'Войти'
+      register: 'Зарегистрироваться'
+      password_reset: 'Изменить пароль'
+      password_forgot: 'Забыли пароль?'
+      event: 'Страница события'
+      events: 'Все события'
+      confirmation_instructions: 'Не получили инструкции для подтверждению аккаунта?'
