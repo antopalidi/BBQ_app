@@ -1,4 +1,12 @@
 <div class="event-photo mb-3">
+  <% if current_user_can_edit?(photo) %>
+    <%= button_to '❌',
+                  event_photo_path(photo.event, photo),
+                  form: {data: {turbo_confirm: t('photos.photo.destroy_confirm')}},
+                  method: :delete,
+                  class: 'bg-transparent border-0',
+                  form_class: 'd-inline'%>
+  <% end %>
   <%= link_to image_tag photo.photo.thumb.url if photo.photo.url %>
   <span>Добавил:</span>
   <%= render partial: 'users/user', object: photo.user %>
