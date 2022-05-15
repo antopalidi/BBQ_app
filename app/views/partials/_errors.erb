@@ -1,6 +1,9 @@
 <% errors = model.errors %>
 
 <% if errors.any? %>
+  <div class="lead mb-3 text-danger">
+    <%= t('views.errors.form_has') %> <%= I18n.t('views.errors.error', count: errors.count) %>
+  </div>
   <div id="error_explanation">
     <% errors.full_messages.each do |message| %>
       <div class="alert alert-danger alert-dismissible fade show" role="alert">

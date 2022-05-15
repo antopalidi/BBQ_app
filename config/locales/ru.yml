@@ -94,3 +94,9 @@ ru:
       event: 'Страница события'
       events: 'Все события'
       confirmation_instructions: 'Не получили инструкции для подтверждению аккаунта?'
+    errors:
+      form_has: 'В вашей форме'
+      error:
+        one: '%{count} ошибка'
+        few: '%{count} ошибки'
+        many: '%{count} ошибок'

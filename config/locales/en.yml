@@ -50,3 +50,8 @@ en:
       event: 'Event'
       events: 'All events'
       confirmation_instructions: "'Didn't receive confirmation instructions?'"
+    errors:
+      form_has: 'Form has'
+      error:
+        one: '%{count} error'
+        other: '%{count} errors'
