@@ -57,6 +57,7 @@ ru:
   app:
     name: 'Шашлыки'
     company: 'Хороший программист'
+    events: 'События'
 
   comments:
     comment:
@@ -100,3 +101,23 @@ ru:
         one: '%{count} ошибка'
         few: '%{count} ошибки'
         many: '%{count} ошибок'
+    buttons:
+      send: 'Отправить'
+      back_to_events: 'Вернуться к событиям'
+      upload: 'Загрузить'
+      file_select: 'Выберите файл'
+      follow: 'Подписаться'
+      edit_profile: 'Редактировать профиль'
+      delete_profile: 'Удалить профиль'
+      edit_event: 'Редактировать событие'
+      delete_event: 'Удалить событие'
+      create_event: 'Создать событие'
+    text:
+      event:
+        added: 'Добавил'
+        go: 'Пойдут'
+        calls: 'Зовёт'
+        i_go: 'Я пойду'
+      user:
+        events: 'События пользователя'
+        no_events: 'У этого пользователя еще нет событий'

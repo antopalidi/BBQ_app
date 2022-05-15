@@ -6,8 +6,8 @@
 
   <% if @user == current_user %>
     <div class="d-flex flex-row justify-content-center align-items-center mt-5 mb-5">
-      <%= link_to "Редактировать профиль", edit_user_path(@user), class: 'btn btn-outline-success me-3' %>
-      <%= button_to 'Удалить профиль', event_path(@user), method: :delete,
+      <%= link_to t('views.buttons.edit_profile'), edit_user_path(@user), class: 'btn btn-outline-success me-3' %>
+      <%= button_to t('views.buttons.delete_profile'), event_path(@user), method: :delete,
                     form: { data: { turbo_confirm: 'Are you sure' } }, title: 'Delete profile',
                     class: 'btn btn-outline-danger' %>
   <% end %>
@@ -16,12 +16,12 @@
   <div class="row">
     <div class="col-md-12 mt-5 text-center">
       <% if @user.events.any? %>
-        <h3>События пользователя:</h3>
+        <h3><%= t('views.text.user.events') %>:</h3>
         <div class="row">
           <%= render partial: 'events/event', collection: @user.events %>
         </div>
       <% else %>
-        <p class="mt-5">У этого пользователя еще нет событий</p>
+        <p class="mt-5"><%= t('views.text.user.no_events') %></p>
       <% end %>
     </div>
   </div>

@@ -5,6 +5,7 @@ en:
   app:
     name: 'BBQ'
     company: 'Good Programmer'
+    events: 'Events'
 
   controllers:
     events:
@@ -55,3 +56,23 @@ en:
       error:
         one: '%{count} error'
         other: '%{count} errors'
+    buttons:
+      send: 'Send'
+      back_to_events: 'Back to events'
+      upload: 'Upload'
+      file_select: 'Select the file'
+      follow: 'Follow'
+      edit_profile: 'Edit profile'
+      delete_profile: 'Delete profile'
+      edit_event: 'Edit event'
+      delete_event: 'Delete event'
+      create_event: 'Create event'
+    text:
+      event:
+        added: 'Added'
+        go: 'Go'
+        calls: 'Calls'
+        i_go: 'I go'
+      user:
+        events: 'User events'
+        no_events: 'This user has no events yet'

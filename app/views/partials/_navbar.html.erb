@@ -4,8 +4,10 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <div class="navbar-nav flex-row ms-3">
         <% if user_signed_in? %>
-          <li><%= link_to 'Профиль', current_user, class: 'nav-link me-4' %></li>
-          <li><%= button_to 'Выйти', destroy_user_session_path, method: :delete, class: 'nav-link border-0 bg-transparent' %></li>
+          <li><%= link_to t('views.links.profile'), current_user, class: 'nav-link me-4' %></li>
+          <li><%= button_to t('views.links.logout'), destroy_user_session_path, method: :delete, class: 'nav-link border-0
+          bg-transparent'
+          %></li>
         <% else %>
           <li><%= link_to 'Войти', new_user_session_path, class: 'nav-link mr-4' %></li>
           <li><%= link_to 'Зарегистрироваться', new_user_registration_path, class: 'nav-link' %></li>

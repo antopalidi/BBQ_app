@@ -1,6 +1,6 @@
-<h1 class="my-5">События</h1>
+<h1 class="my-5"><%= t('app.events') %></h1>
 
-<%= link_to 'Создать событие', new_event_path, class: 'btn btn-success' %>
+<%= link_to t('views.buttons.create_event'), new_event_path, class: 'btn btn-success' %>
 
 <div id="events" , class="my-4 row row-cols-1 row-cols-lg-3 row-cols-md-2">
   <% @events.each do |event| %>
