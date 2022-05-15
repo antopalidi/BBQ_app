@@ -88,3 +88,18 @@ en:
       user:
         events: 'User events'
         no_events: 'This user has no events yet'
+  event_mailer:
+    comment:
+      title: 'New comment'
+      author: 'Author'
+      event: 'Event'
+      datetime: 'DateTime'
+      owner: 'Owner'
+    subscription:
+      title: 'New follower'
+      name: 'Name'
+      email: 'Email'
+      author: 'Author'
+      event: 'Event'
+      datetime: 'DateTime'
+      owner: 'Owner'
