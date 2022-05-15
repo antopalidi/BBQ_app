@@ -14,25 +14,23 @@ class Subscription < ApplicationRecord
     validate :cannot_use_someone_email
   end
 
+  validate :ban_subscriptions_to_own_event
+
   def user_name
-    if user.present?
-      user.name
-    else
-      super
-    end
+    user.present? ? user.name : super
   end
 
   def user_email
-    if user.present?
-      user.email
-    else
-      super
-    end
+    user.present? ? user.email : super
   end
 
+  private
+
   def cannot_use_someone_email
-    if User.exists?(email: user_email)
-      errors.add(:user_email, :wrong_email)
-    end
+    errors.add(:user_email, :wrong_email) if User.exists?(email: user_email)
+  end
+
+  def ban_subscriptions_to_own_event
+    errors.add(:user_email, :creator_cant_subscribe) if event.user == user
   end
 end
