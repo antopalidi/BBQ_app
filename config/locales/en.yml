@@ -84,6 +84,7 @@ en:
         go: 'Go'
         calls: 'Calls'
         i_go: 'I go'
+        subscribers_list: 'No one has joined yet'
       user:
         events: 'User events'
         no_events: 'This user has no events yet'
