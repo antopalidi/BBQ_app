@@ -8,6 +8,12 @@ ru:
       subscription: 'Подписка'
       comment: 'Комментарий'
       photo: 'Фотография'
+    errors:
+      models:
+        subscription:
+          attributes:
+            user_email:
+              wrong_email: ' уже зарегестрирован. Войдите, чтобы подписаться с этим email.'
 
     # Перевод названий аттрибутов моделей
     attributes:

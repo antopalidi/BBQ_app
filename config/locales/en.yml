@@ -27,6 +27,14 @@ en:
       created: 'You have uploaded a photo to the event'
       destroyed: 'You deleted the photo'
 
+  activerecord:
+    errors:
+      models:
+        subscription:
+          attributes:
+            user_email:
+              wrong_email: ' is already registered. Log in to sign up with this email.'
+
   views:
     users:
       login:
