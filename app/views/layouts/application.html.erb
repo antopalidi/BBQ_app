@@ -15,9 +15,15 @@
 <main class="flex-shrink-0">
   <div class="container">
     <% if flash[:notice].present? %>
-      <p class="alert alert-success mt-3"><%= flash[:notice] %></p>
+      <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <%= flash[:notice] %>
+      </div>
     <% elsif flash[:alert].present? %>
-      <p class="alert alert-danger mt-3"><%= flash[:alert] %></p>
+      <div class="alert alert-danger alert-dismissible fade show mt-4" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <%= flash[:alert] %>
+      </div>
     <% end %>
     <%= yield %>
   </div>
