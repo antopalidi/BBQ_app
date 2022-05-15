@@ -4,8 +4,13 @@ class Photo < ApplicationRecord
 
   validates :event, presence: true
   validates :user, presence: true
+  validates :photo, presence: true
 
   mount_uploader :photo, PhotoUploader
 
   scope :persisted, -> { where "id IS NOT NULL" }
+
+  def image_url
+    super || photo.photo.url
+  end
 end
