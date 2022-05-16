@@ -34,3 +34,6 @@
 a {
  text-decoration: none;
 }
+.field_with_errors {
+  display: contents;
+}
