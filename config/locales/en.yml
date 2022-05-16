@@ -103,3 +103,9 @@ en:
       event: 'Event'
       datetime: 'DateTime'
       owner: 'Owner'
+    photo:
+      title: 'New photo'
+      author: 'Author:'
+      event: 'Event:'
+      datetime: 'DateTime:'
+      owner: 'Owner:'
