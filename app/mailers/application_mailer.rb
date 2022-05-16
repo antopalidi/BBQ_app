@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "BBQ friends app"
+  default from: ENV
   layout "mailer"
 end
