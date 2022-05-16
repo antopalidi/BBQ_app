@@ -4,6 +4,7 @@ class Subscription < ApplicationRecord
 
   with_options if: -> { user.present? } do
     validates :user, uniqueness: { scope: :event_id }
+    validate :ban_subscriptions_to_own_event
   end
 
   with_options unless: -> { user.present? } do
@@ -14,14 +15,12 @@ class Subscription < ApplicationRecord
     validate :cannot_use_someone_email
   end
 
-  validate :ban_subscriptions_to_own_event
-
   def user_name
-    user.present? ? user.name : super
+    user.present? ? user&.name : super
   end
 
   def user_email
-    user.present? ? user.email : super
+    user.present? ? user&.email : super
   end
 
   private
