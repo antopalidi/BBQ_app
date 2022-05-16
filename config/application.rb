@@ -32,6 +32,5 @@ module BBQApp
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.generators.system_tests = nil
-    config.action_mailer.delivery_method = :mailjet_api
   end
 end
