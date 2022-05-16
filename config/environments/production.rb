@@ -93,16 +93,18 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = {host: 'bbq-friends-app.herokuapp.com'}
   config.action_mailer.raise_delivery_errors = false
+
   config.action_mailer.perform_deliveries = true
+
   config.action_mailer.delivery_method = :smtp
 
   ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.sendgrid.net',
-    :port           => '587',
+    :port           => ENV['MAILGUN_SMTP_PORT'],
+    :address        => ENV['MAILGUN_SMTP_SERVER'],
+    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+    :domain         => 'yourapp.heroku.com',
     :authentication => :plain,
-    :user_name      => ENV['SENDGRID_USERNAME'],
-    :password       => ENV['SENDGRID_PASSWORD'],
-    :domain         => 'heroku.com',
-    :enable_starttls_auto => true
   }
+  ActionMailer::Base.delivery_method = :smtp
 end

@@ -14,6 +14,11 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'fog-aws'
 
+# gem 'dotenv-rails'
+# gem 'mailjet'
+gem 'mailgun-ruby', '~>1.2.5'
+require 'rest-client'
+
 gem 'sprockets-rails'
 gem 'puma', '~> 5.0'
 gem 'jsbundling-rails'
