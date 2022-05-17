@@ -12,6 +12,6 @@ class Event < ApplicationRecord
   validates :datetime, presence: true
 
   def visitors
-    (subscribers + [user]).uniq
+    ([user] + subscribers).uniq
   end
 end
