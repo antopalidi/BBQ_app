@@ -5,7 +5,7 @@
 <hr/>
 
 <%= t('.event') %>
-<h3><%= sanitize link_to(@event.title, event_url(@event, locale, only_path: false )),
+<h3><%= sanitize link_to(@event.title, event_url(@event, only_path: false )),
                  tags: %w(a), attributes: %w(href)%>
 </h3>
 <%= t('.datetime') %>
