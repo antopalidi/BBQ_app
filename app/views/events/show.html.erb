@@ -56,7 +56,7 @@
       <p><%= render partial: 'users/user', object: @event.user %></p>
     </div>
 
-    <% if @event.subscriptions.empty? %>
+    <% if @event.subscriptions.size == 1 %>
       <p><%= t('views.text.event.subscribers_list') %></p>
     <% else %>
       <div class="event-subscriptions">
