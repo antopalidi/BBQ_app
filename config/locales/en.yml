@@ -59,6 +59,7 @@ en:
       password_reset: 'Reset password'
       password_forgot: 'Forgot your password?'
       event: 'Event'
+      back: 'Back'
       events: 'All events'
       confirmation_instructions: "'Didn't receive confirmation instructions?'"
     errors:
