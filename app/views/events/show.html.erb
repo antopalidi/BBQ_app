@@ -43,9 +43,9 @@
       <%= render partial: 'comments/form',
                  locals: { comment: @new_comment || @event.comments.build } %>
 
-      <div class="buffer-both">
+      <div class="mb-3">
         <%= render partial: 'comments/comment',
-                   collection: @event.comments.except(@new_comment) %>
+                   collection: @event.comments.except(@new_comment).order(created_at: :desc) %>
       </div>
     </div>
   </div>
@@ -78,4 +78,4 @@
 
   </div>
 </div>
-<%= link_to t('views.buttons.back_to_events'), events_path, class: 'btn btn-outline-primary' %>
+<%= link_to t('views.buttons.back_to_events'), events_path, class: 'btn btn-outline-primary my-3' %>
