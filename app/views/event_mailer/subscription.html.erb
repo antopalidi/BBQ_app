@@ -4,7 +4,7 @@
 <hr/>
 
 <%= t '.event' %>
-<h3><%= sanitize link_to(@event.title, event_url(locale, @event, only_path: false )),
+<h3><%= sanitize link_to(@event.title, event_url(locale, @event, only_path: true )),
                  tags: %w(a), attributes: %w(href)%>
 </h3>
 <%= t '.author' %>
