@@ -8,6 +8,9 @@
 
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  <%= stylesheet_link_tag 'gmaps4rails' %>
+  <script src='//cdn.jsdelivr.net/gmaps4rails/2.1.2/gmaps4rails.js'> </script>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.3/underscore.js'> </script>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -34,6 +37,5 @@
   </div>
 
 </footer>
-
 </body>
 </html>

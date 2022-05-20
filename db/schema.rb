@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_18_184731) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_20_172607) do
   create_table "comments", force: :cascade do |t|
     t.text "body"
     t.string "user_name"
@@ -31,6 +31,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_18_184731) do
     t.datetime "updated_at", null: false
     t.integer "user_id", null: false
     t.string "pincode"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
