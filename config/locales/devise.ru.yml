@@ -1,6 +1,6 @@
 devise:
     reset_password_instructions:
-      greeting: "Приветствуем!"
+      greeting: "Здравствуйте,"
       subject: "Инструкции по сбросу пароля"
       description: "Кто-то запросил ссылку для изменения вашего пароля. Вы можете сделать это по ссылке ниже."
       change_password: "Изменить мой пароль"
