@@ -1,4 +1,5 @@
-devise:
+ru:
+  devise:
     reset_password_instructions:
       greeting: "Здравствуйте,"
       subject: "Инструкции по сбросу пароля"
