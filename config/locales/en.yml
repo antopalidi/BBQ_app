@@ -80,6 +80,7 @@ en:
       delete_event: 'Delete event'
       create_event: 'Create event'
       save: 'Save'
+      show_event: 'Show event'
     text:
       event:
         added: 'Added'
@@ -90,6 +91,11 @@ en:
       user:
         events: 'User events'
         no_events: 'This user has no events yet'
+    events:
+      new:
+        title: 'New event'
+      edit:
+        title: 'Edit event'
 
   event_mailer:
     comment:

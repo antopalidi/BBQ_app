@@ -123,6 +123,7 @@ ru:
       create_event: 'Создать событие'
       update: 'Обновить'
       save: 'Сохранить данные'
+      show_event: 'Показать событие'
     text:
       event:
         added: 'Добавил'
@@ -133,6 +134,11 @@ ru:
       user:
         events: 'События пользователя'
         no_events: 'У этого пользователя еще нет событий'
+    events:
+      new:
+        title: 'Новое событие'
+      edit:
+        title: 'Редактировать событие'
 
   event_mailer:
     comment:

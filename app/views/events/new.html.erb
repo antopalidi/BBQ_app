@@ -1,4 +1,4 @@
-<h1>Новое событие</h1>
+<h1 class="mt-3 m3"><%= t 'views.events.new.title'  %></h1>
 
 <div class="row">
   <div class="col-md-6 buffer-top">
@@ -9,5 +9,5 @@
 <br>
 
 <div class="container">
-  <%= link_to "Вернуться к событиям", events_path, class: 'btn btn-outline-primary' %>
+  <%= link_to t('views.buttons.back_to_events'), events_path, class: 'btn btn-outline-primary' %>
 </div>

@@ -1,10 +1,10 @@
-<h1>Редактировать событие</h1>
+<h1><%= t 'views.events.edit.title' %></h1>
 
 <%= render "form", event: @event %>
 
 <br>
 
 <div class="container">
-  <%= link_to "Показать событие", @event, class: 'btn btn-outline-success' %>
-  <%= link_to "Назад к событиям", events_path, class: 'btn btn-outline-primary' %>
+  <%= link_to t('views.buttons.show_event'), @event, class: 'btn btn-outline-success' %>
+  <%= link_to t('views.buttons.back_to_events'), events_path, class: 'btn btn-outline-primary' %>
 </div>
