@@ -6,7 +6,6 @@ class Comment < ApplicationRecord
   validates :body, presence: true
   validates :user_name, presence: true, unless: -> { user.present? }
 
-
   def user_name
     if user.present?
       user.name
