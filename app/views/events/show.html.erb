@@ -18,8 +18,10 @@
             <% if current_user_can_edit?(@event) %>
               <%= link_to t('views.buttons.edit_event'), edit_event_path(@event),
                           class: 'btn btn-primary me-3' %>
-              <%= button_to t('views.buttons.delete_event'), event_path(@event), method: :delete,
-                            form: { data: { turbo_confirm: 'Are you sure' } }, title: 'Delete event',
+              <%= button_to t('views.buttons.delete_event'), event_path(@event),
+                            form: { data: { turbo_confirm: 'Are you sure' } },
+                            method: :delete,
+                            title: 'Delete event',
                             class: 'btn btn-danger' %>
             <% end %>
           </div>

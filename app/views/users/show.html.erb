@@ -7,7 +7,7 @@
   <% if @user == current_user %>
     <div class="d-flex flex-row justify-content-center align-items-center mt-5 mb-5">
       <%= link_to t('views.buttons.edit_profile'), edit_user_path(@user), class: 'btn btn-outline-success me-3' %>
-      <%= button_to t('views.buttons.delete_profile'), event_path(@user), method: :delete,
+      <%= button_to t('views.buttons.delete_profile'), user_registration_path, method: :delete,
                     form: { data: { turbo_confirm: 'Are you sure' } }, title: 'Delete profile',
                     class: 'btn btn-outline-danger' %>
   <% end %>

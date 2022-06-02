@@ -1,5 +1,5 @@
-<%= form_with model: @event, data: { turbo: false } do |f| %>
-  <%= render partial: 'partials/errors', locals: { model: @event } %>
+<%= form_with model: event, data: { turbo: false } do |f| %>
+  <%= render partial: 'partials/errors', locals: { model: event } %>
 
   <div class="mb-2">
     <%= f.label :title %>
