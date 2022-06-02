@@ -1,12 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_action :configure_permitted_parameters, if: :devise_controller?
 
-  # helper_method :current_user_edit?
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_locale
 
   helper_method :current_user_can_edit?
-
-  around_action :switch_locale
 
   private
 
@@ -17,21 +15,13 @@ class ApplicationController < ActionController::Base
     )
   end
 
-  # def current_user_edit?(event)
-  #   user_signed_in? && event.user == current_user
-  # end
-
-  def switch_locale(&action)
-    locale = locale_from_url || I18n.default_locale
-    I18n.with_locale locale, &action
+  def set_locale
+    I18n.locale = locale_from_url || I18n.default_locale
   end
 
   def locale_from_url
     locale = params[:locale]
-
-    return locale if I18n.available_locales.map(&:to_s).include?(locale)
-
-    nil
+    locale if I18n.available_locales.include?(locale.to_sym)
   end
 
   def default_url_options
