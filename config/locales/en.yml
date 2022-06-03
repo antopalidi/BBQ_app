@@ -37,25 +37,25 @@ en:
               wrong_email: ' is already registered. Log in to sign up with this email.'
       attributes:
         user:
-          email: Email
-          name: Name
-          avatar: Avatar
-          password: Password
-          password_confirmation: Password confirmation
+          email: 'Email'
+          name: 'Name'
+          avatar: 'Avatar'
+          password: 'Password'
+          password_confirmation: 'Password confirmation'
         event:
-          title: Title
-          address: Address
-          datetime: Date and time
-          description: Description
-          pincode: Pincode
+          title: 'Title'
+          address: 'Address'
+          datetime: 'Date and time'
+          description: 'Description'
+          pincode: 'Pincode'
         subscription:
-          user_name: User name
-          user_email: Email
+          user_name: 'User name'
+          user_email: 'Email'
         comment:
-          body: Comment
-          user_name: User name
+          body: 'Comment'
+          user_name: 'User name'
         photo:
-          photo: Photo
+          photo: 'Photo'
 
   views:
     users:
