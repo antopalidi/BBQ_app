@@ -139,3 +139,9 @@ en:
       event: 'Event:'
       datetime: 'DateTime:'
       owner: 'Owner:'
+
+  photos:
+    photo:
+      upload: 'Add photo'
+      added: 'Added by'
+      destroy_confirm: 'Do you really want to delete this photo?'

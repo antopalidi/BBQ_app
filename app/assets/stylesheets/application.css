@@ -1,4 +1,6 @@
 /*
+ *= require lightbox2
+ *= require jquery
  *= require_tree .
  *= require_self
  */

@@ -20,6 +20,8 @@ gem 'fog-aws'
 gem 'dotenv-rails'
 gem 'mailjet'
 
+gem 'lightbox2-rails'
+
 gem 'sprockets-rails'
 gem 'puma', '~> 5.0'
 gem 'jsbundling-rails'

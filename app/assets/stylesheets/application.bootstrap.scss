@@ -1,6 +1,8 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+@import "lightbox2/src/css/lightbox";
 @import 'application';
 @import 'events';
 @import 'locale';
 @import 'users';
+@import "gallery";

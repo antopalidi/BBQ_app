@@ -74,6 +74,8 @@ ru:
   photos:
     photo:
       destroy_confirm: 'Вы уверены, что хотите удалить это фото?'
+      added: 'Добавил'
+      upload: 'Добавить фото'
 
   views:
     users:
