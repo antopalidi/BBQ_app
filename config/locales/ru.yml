@@ -29,11 +29,11 @@ ru:
         description: 'Описание'
         pincode: 'Пинкод доступа'
       comment:
-        user_name: 'Ваше имя'
+        user_name: 'Имя пользователя'
         body: 'Комментарий'
       subscription:
-        user_name: 'Ваше имя'
-        user_email: 'Ваш email'
+        user_name: 'Имя пользователя'
+        user_email: 'Email'
       photo:
         photo: 'Фотография'
 
