@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :set_locale
+  around_action :set_locale
 
   helper_method :current_user_can_edit?
 
@@ -15,8 +15,9 @@ class ApplicationController < ActionController::Base
     )
   end
 
-  def set_locale
-    I18n.locale = locale_from_url || I18n.default_locale
+  def set_locale(&action)
+    locale = I18n.locale = locale_from_url || I18n.default_locale
+    I18n.with_locale locale, &action
   end
 
   def locale_from_url
