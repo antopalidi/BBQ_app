@@ -4,13 +4,12 @@
                   event_photo_path(photo.event, photo),
                   form: { data: { turbo_confirm: t('photos.photo.destroy_confirm') } },
                   method: :delete,
-                  class: 'bg-transparent border-0',
+                  class: 'bg-transparent border-0 delete',
                   form_class: 'd-inline' %>
   <% end %>
   <% image_info = "#{render partial: 'photos/image_info', locals: { photo: photo }}" %>
-  <%= link_to image_path(photo.photo.url), data: { lightbox: 'image', title: image_info } do %>
-    <%= image_tag photo.photo.thumb.url %>
-  <% end %>
+  <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url,
+              data: { lightbox: 'image', title: image_info, turbo: false } %>
   <span><%= t('photos.photo.added') %>:</span>
   <%= render partial: 'users/user', object: photo.user %>
 </div>
