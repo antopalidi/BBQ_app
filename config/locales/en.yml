@@ -71,6 +71,7 @@ en:
           min: 'characters minimum'
         forgot:
           title: 'Forgot your password?'
+        char: 'characters minimum'
         blank_password: "leave blank if you don't want to change it"
         confirm_password: 'we need your current password to confirm your changes'
     links:
@@ -102,6 +103,7 @@ en:
       create_event: 'Create event'
       save: 'Save'
       show_event: 'Show event'
+      delete: 'Delete'
     text:
       event:
         added: 'Added'
@@ -145,3 +147,8 @@ en:
       upload: 'Add photo'
       added: 'Added by'
       destroy_confirm: 'Do you really want to delete this photo?'
+
+  user:
+    edit:
+      destroy:
+        confirm: 'Вы действительно хотите удалить профиль?'

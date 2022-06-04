@@ -11,7 +11,8 @@
       </div>
       <% if current_user_can_edit?(comment) %>
         <%= button_to '❌', event_comment_path(comment.event, comment), method: :delete,
-                      form: { data: { turbo_confirm: t('.destroy_confirm') } }, title: 'Delete', class: 'btn btn-outline' %>
+                      form: { data: { turbo_confirm: t('.destroy_confirm') } }, title: t('views.buttons.delete'), class: 'btn
+                      btn-outline' %>
       <% end %>
     </div>
     <p><%= comment.body %></p>
