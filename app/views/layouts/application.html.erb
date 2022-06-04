@@ -19,17 +19,7 @@
 <%= render 'partials/navbar' %>
 <main class="flex-shrink-0">
   <div class="container">
-    <% if flash[:notice].present? %>
-      <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        <%= flash[:notice] %>
-      </div>
-    <% elsif flash[:alert].present? %>
-      <div class="alert alert-danger alert-dismissible fade show mt-4" role="alert">
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        <%= flash[:alert] %>
-      </div>
-    <% end %>
+    <%= flash_message %>
     <%= yield %>
   </div>
 </main>
