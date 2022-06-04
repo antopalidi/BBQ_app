@@ -12,7 +12,7 @@
   <% end %>
 
   </div>
-  <div class="row">
+  <div class="row" data-turbo="false">
     <div class="col-md-12 mt-5 text-center">
       <% if @user.events.any? %>
         <h3><%= t('views.text.user.events') %>:</h3>
