@@ -8,8 +8,9 @@
       <%= link_to t('views.buttons.edit_profile'), edit_user_path(@user), class: 'btn btn-outline-success me-3' %>
       <%= button_to t('views.buttons.delete_profile'), user_registration_path, method: :delete,
                     form: { data: { turbo_confirm: t('user.edit.destroy.confirm') } }, title: t('views.buttons.delete'),
-                    class: 'btn btn-outline-danger' %>
+                    class: 'btn btn-outline-danger me-3' %>
   <% end %>
+  <%= link_to t('views.links.back'), :back, class: 'btn btn-outline-primary' %>
 
   </div>
   <div class="row">

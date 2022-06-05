@@ -19,7 +19,7 @@
         <%= f.label :password %> <i>(<%= t('views.users.password.blank_password') %>)</i>
         <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
         <% if @minimum_password_length %>
-          <em><%= "#{ @minimum_password_length } #{t('views.users.password.char')}"%></em>
+          <em><%= "#{ @minimum_password_length } #{t('views.users.password.char')}" %></em>
         <% end %>
       </div>
 
@@ -34,7 +34,7 @@
       </div>
 
       <div class="actions mb-5">
-        <%= f.submit t('views.buttons.update') , class: 'btn btn-primary' %>
+        <%= f.submit t('views.buttons.update'), class: 'btn btn-primary' %>
       </div>
     <% end %>
 
