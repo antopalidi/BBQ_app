@@ -10,3 +10,7 @@ document.addEventListener('turbo:load', () => {
         'imageFadeDuration': 200
     })
 })
+
+window.addEventListener( "popstate", function ( event ) {
+    location.reload(true);
+})
