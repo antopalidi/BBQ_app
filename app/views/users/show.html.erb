@@ -1,4 +1,4 @@
-<div class="text-center mt-5 " data-turbo="false">
+<div class="text-center mt-5 " >
   <h1><%= @user.name %></h1>
 
   <%= image_tag user_avatar(@user), class: 'user-photo' %>
@@ -12,7 +12,7 @@
   <% end %>
 
   </div>
-  <div class="row" data-turbo="false">
+  <div class="row">
     <div class="col-md-12 mt-5 text-center">
       <% if @user.events.any? %>
         <h3><%= t('views.text.user.events') %>:</h3>

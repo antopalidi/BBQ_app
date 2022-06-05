@@ -3,4 +3,4 @@ import "./controllers"
 import "@hotwired/turbo-rails"
 import * as bootstrap from "bootstrap"
 import "jquery"
-import "lightbox2"
+import './gallery.js'
