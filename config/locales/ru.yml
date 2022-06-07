@@ -126,7 +126,7 @@ ru:
       follow: 'Подписаться'
       edit_profile: 'Редактировать профиль'
       delete_profile: 'Удалить профиль'
-      edit_event: 'Редактировать событие'
+      edit_event: 'Редактировать'
       delete_event: 'Удалить событие'
       create_event: 'Создать событие'
       update: 'Обновить'

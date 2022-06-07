@@ -1,37 +1,39 @@
-<div class="event container mt-3">
-  <div class="event-info row">
-    <div class="col-md-12">
+<div class="event container mt-3 d-md-flex flex-md-row flex-sm-column justify-content-between">
+  <div class="event-info col-md-6 col-sm-12 m-sm-0 me-md-5 mb-sm-3 row">
+    <div class="event-photo-block p-sm-0">
       <%= content_tag 'div', '', class: 'event-background',
                       style: "background-image: url(#{event_photo(@event)})" %>
 
-      <div class="event-info-inner row">
-        <div class="col-md-6">
-          <div class="event-description pt-3">
-            <h1><%= @event.title %></h1>
-            <h3><%= l @event.datetime, format: :short %></h3>
-            <h3><small><%= link_to @event.address,
-                                   "https://yandex.ru/maps/?text=#{@event.address}" %></small></h3>
-            <p><%= @event.description %></p>
-          </div>
+      <div class="event-info-inner m-sm-0 row">
 
-          <div class="d-flex flex-row justify-content-start align-items-center my-3">
-            <% if current_user_can_edit?(@event) %>
-              <%= link_to t('views.buttons.edit_event'), edit_event_path(@event),
-                          class: 'btn btn-primary me-3' %>
-              <%= button_to t('views.buttons.delete_event'), event_path(@event),
-                            form: { data: { turbo_confirm: 'Are you sure' } },
-                            method: :delete,
-                            title: 'Delete event',
-                            class: 'btn btn-danger' %>
-            <% end %>
-          </div>
+        <div class="event-description pt-3">
+          <h1><%= @event.title %></h1>
+          <h3><%= l @event.datetime, format: :short %></h3>
+          <h3><small><%= link_to @event.address,
+                                 "https://yandex.ru/maps/?text=#{@event.address}" %></small></h3>
+          <p><%= @event.description %></p>
+        </div>
+
+        <div class="d-flex flex-row justify-content-start align-items-center my-3">
+          <% if current_user_can_edit?(@event) %>
+            <%= link_to t('views.buttons.edit_event'), edit_event_path(@event),
+                        class: 'btn btn-primary me-3' %>
+            <%= button_to t('views.buttons.delete_event'), event_path(@event),
+                          form: { data: { turbo_confirm: 'Are you sure' } },
+                          method: :delete,
+                          title: 'Delete event',
+                          class: 'btn btn-danger' %>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
+  <div class="col-md-6 col-sm-12">
+    <%= render 'partials/map' %>
+  </div>
 </div>
 
-<%= render 'partials/map' %>
+
 
 <div class="row mt-5">
   <div class="col-md-8">

@@ -1,5 +1,9 @@
 <h1 class="my-5"><%= t('app.events') %></h1>
 
+<div class="col-md-12 mb-5">
+  <%= render 'partials/map' %>
+</div>
+
 <%= link_to t('views.buttons.create_event'), new_event_path, class: 'btn btn-success' %>
 
 <div id="events" class="my-4 row row-cols-1 row-cols-lg-3 row-cols-md-2" >
@@ -7,4 +11,3 @@
     <%= render event %>
   <% end %>
 </div>
-<%= render 'partials/map' %>
