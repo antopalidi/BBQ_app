@@ -42,3 +42,5 @@ public/uploads
 .yarn
 .secrets.yml
 .env
+/config/database.yml
+/config/secrets.yml
