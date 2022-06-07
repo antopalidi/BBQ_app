@@ -148,6 +148,9 @@ ru:
         title: 'Новое событие'
       edit:
         title: 'Редактировать событие'
+      destroy:
+        confirm: 'Вы действительно хотите удалить событие?'
+
 
   event_mailer:
     comment:

@@ -119,6 +119,8 @@ en:
         title: 'New event'
       edit:
         title: 'Edit event'
+      destroy:
+        confirm: 'Do you really want to delete the event?'
 
   event_mailer:
     comment:
