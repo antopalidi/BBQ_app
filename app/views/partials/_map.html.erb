@@ -3,7 +3,7 @@
 </div>
 
 <script type="text/javascript">
-    handler = Gmaps.build('Google');
+    const handler = Gmaps.build('Google');
     handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
         const markers = handler.addMarkers(<%=raw @coordinates.to_json %>);
         handler.bounds.extendWith(markers);
