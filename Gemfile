@@ -38,8 +38,8 @@ end
 group :development do
   gem 'web-console'
   gem 'sqlite3', '~> 1.4'
-  gem "capistrano", "~> 3.10", require: false
-  gem "capistrano-rails", "~> 1.3", require: false
+  gem "capistrano"
+  gem "capistrano-rails"
   gem 'capistrano-passenger'
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
