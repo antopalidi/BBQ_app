@@ -10,6 +10,8 @@ set :repo_url, "git@github.com:antopalidi/BBQ_app.git"
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/deploy/apps/bbqfriends"
 
+set :passenger_restart_with_touch, false
+
 # Файлы, которые лежат вне репозитория
 append :linked_files, 'config/database.yml', 'config/secrets.yml'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads'
