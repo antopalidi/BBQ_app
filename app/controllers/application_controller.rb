@@ -1,5 +1,9 @@
+include Pundit
+
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   before_action :configure_permitted_parameters, if: :devise_controller?
   around_action :set_locale
@@ -34,5 +38,10 @@ class ApplicationController < ActionController::Base
       model.user == current_user ||
         (model.try(:event).present? && model.event.user == current_user)
     )
+  end
+
+  def user_not_authorized
+    flash[:alert] = t('pundit.not_authorized')
+    redirect_to(request.referrer || root_path)
   end
 end

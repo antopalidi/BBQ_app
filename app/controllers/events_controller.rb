@@ -4,6 +4,8 @@ class EventsController < ApplicationController
   before_action :set_current_user_event, only: %i[edit update destroy]
   before_action :password_guard!, only: [:show]
 
+  after_action :verify_authorized, except: %i[show index]
+
   def index
     @events = Event.all
     @coordinates = Gmaps4rails.build_markers(@events) do |event, marker|
@@ -24,12 +26,16 @@ class EventsController < ApplicationController
 
   def new
     @event = current_user.events.build
+    authorize @event
   end
 
-  def edit; end
+  def edit
+    authorize @event
+  end
 
   def create
     @event = current_user.events.build(event_params)
+    authorize @event
 
     if @event.save
       redirect_to @event, notice: I18n.t('controllers.events.created')
@@ -39,6 +45,8 @@ class EventsController < ApplicationController
   end
 
   def update
+    authorize @event
+
     if @event.update(event_params)
       redirect_to @event, notice: I18n.t('controllers.events.updated')
     else
@@ -47,6 +55,8 @@ class EventsController < ApplicationController
   end
 
   def destroy
+    authorize @event
+
     @event.destroy
     redirect_to events_url, alert: I18n.t('controllers.events.destroyed')
   end
