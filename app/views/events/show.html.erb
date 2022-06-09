@@ -1,10 +1,10 @@
-<div class="event container mt-3 d-md-flex flex-md-row flex-sm-column justify-content-between">
-  <div class="event-info col-md-6 col-sm-12 m-sm-0 me-md-5 mb-sm-3 row">
-    <div class="event-photo-block p-sm-0">
+<div class="event mt-3 d-md-flex flex-md-row flex-sm-column justify-md-content-between">
+  <div class="event-info col-md-6 col-sm-12 m-sm-0 mb-sm-3 row-md m-sm-auto">
+    <div class="event-photo-block p-sm-0 border border-white border-2">
       <%= content_tag 'div', '', class: 'event-background',
                       style: "background-image: url(#{event_photo(@event)})" %>
 
-      <div class="event-info-inner m-sm-0 row">
+      <div class="event-info-inner m-sm-0 p-4">
 
         <div class="event-description pt-3">
           <h1><%= @event.title %></h1>
