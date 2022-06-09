@@ -38,7 +38,7 @@
 
 .event-info-inner {
   background: rgba(0, 0, 0, 0.4);
-  height: inherit;
+  height: 100%;
 }
 
 .event-map {
