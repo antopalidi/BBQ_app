@@ -38,7 +38,7 @@
 <div class="row mt-5">
   <div class="col-md-8">
     <div class="event-photos mb-3">
-      <div class="event-photos-gallery">
+      <div class="event-photos-gallery d-flex flex-wrap">
         <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
       </div>
       <div class="event-photo-form">
