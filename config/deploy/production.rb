@@ -59,4 +59,4 @@
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
-server 'bbqfriends.co.uk', user: 'deploy', roles: %w{app db web}
+server 'bbqfriends.co.uk', user: 'deploy', roles: %w[app db web]
