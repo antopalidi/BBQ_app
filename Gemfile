@@ -3,6 +3,8 @@ git_source(:github) { |repo| 'https://github.com/#{repo}.git' }
 
 ruby '3.1.1'
 
+gem 'ed25519', '>= 1.2', '< 1.3'
+gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
 gem 'rails', '~> 7.0.2', '>= 7.0.2.4'
 
 gem 'devise'

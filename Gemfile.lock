@@ -71,6 +71,7 @@ GEM
     airbrussh (1.4.0)
       sshkit (>= 1.6.1, != 1.7.0)
     bcrypt (3.1.17)
+    bcrypt_pbkdf (1.1.0)
     bindex (0.8.1)
     bootsnap (1.11.1)
       msgpack (~> 1.2)
@@ -130,6 +131,7 @@ GEM
     dotenv-rails (2.7.6)
       dotenv (= 2.7.6)
       railties (>= 3.2)
+    ed25519 (1.2.4)
     erubi (1.10.0)
     excon (0.92.3)
     ffi (1.15.5)
@@ -321,6 +323,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  bcrypt_pbkdf (>= 1.0, < 2.0)
   bootsnap
   capistrano
   capistrano-bundler
@@ -334,6 +337,7 @@ DEPENDENCIES
   devise
   devise-i18n
   dotenv-rails
+  ed25519 (>= 1.2, < 1.3)
   fog-aws
   geocoder
   gmaps4rails
