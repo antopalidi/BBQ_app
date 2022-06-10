@@ -1,4 +1,12 @@
 class EventPolicy < ApplicationPolicy
+  def index?
+    true
+  end
+
+  def edit?
+    update?
+  end
+
   def new?
     user.present?
   end
@@ -7,8 +15,8 @@ class EventPolicy < ApplicationPolicy
     new?
   end
 
-  def edit?
-    update?
+  def show?
+    password_guard!(record)
   end
 
   def update?
@@ -25,10 +33,9 @@ class EventPolicy < ApplicationPolicy
     user.present? && (event.try(:user) == user)
   end
 
-  class Scope < Scope
-    # NOTE: Be explicit about which records you allow access to!
-    def resolve
-      scope
-    end
+  def password_guard!(event_context)
+    return true if event_context.event.pincode.blank? || user.present? && user == event_context.event.user
+
+    event_context.pincode.present? && event_context.event.pincode_valid?(event_context.pincode)
   end
 end

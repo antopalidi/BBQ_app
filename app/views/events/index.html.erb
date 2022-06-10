@@ -4,7 +4,7 @@
   <%= render 'partials/map' %>
 </div>
 
-<% if policy(Event).create? %>
+<% if policy(:event).create? %>
   <%= link_to t('views.buttons.create_event'), new_event_path, class: 'btn btn-success' %>
 <% end %>
 <div id="events" class="my-4 row row-cols-1 row-cols-lg-3 row-cols-md-2">

@@ -13,7 +13,6 @@
                                  "https://yandex.ru/maps/?text=#{@event.address}" %></small></h3>
           <p><%= @event.description %></p>
         </div>
-
         <div class="d-flex flex-row justify-content-start align-items-center my-3">
           <% if policy(@event).edit? %>
             <%= link_to t('views.buttons.edit_event'), edit_event_path(@event),
