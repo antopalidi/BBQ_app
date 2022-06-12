@@ -48,6 +48,7 @@ en:
         datetime: 'Date and time'
         description: 'Description'
         pincode: 'Pincode'
+
       subscription:
         user_name: 'User name'
         user_email: 'Email'
@@ -111,6 +112,7 @@ en:
         calls: 'Calls'
         i_go: 'I go'
         subscribers_list: 'No one has joined yet'
+        pincode_title: 'Access by pin code only'
       user:
         events: 'User events'
         no_events: 'This user has no events yet'
@@ -154,3 +156,6 @@ en:
     edit:
       destroy:
         confirm: 'Вы действительно хотите удалить профиль?'
+
+  pundit:
+    not_authorized: 'You have no rights to perform this action'

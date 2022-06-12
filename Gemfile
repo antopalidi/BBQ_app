@@ -11,6 +11,7 @@ gem 'devise'
 
 gem 'devise-i18n'
 gem 'rails-i18n'
+gem 'pundit'
 
 gem 'geocoder'
 gem 'gmaps4rails'
@@ -48,7 +49,9 @@ group :development do
 end
 
 group :test do
-  gem 'capybara'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'factory_bot_rails'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
