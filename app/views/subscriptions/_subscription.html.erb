@@ -4,7 +4,7 @@
   <% else %>
     <em><%= subscription.user_name %></em>
   <% end %>
-  <% if current_user_can_edit?(subscription) %>
+  <% if policy(subscription).destroy? %>
     <%= button_to '❌', event_subscription_path(subscription.event, subscription), method: :delete,
                   form: { data: { turbo_confirm: t('.destroy_confirm') } },
                   title: t('views.buttons.delete'), class: 'btn btn-outline delete' %>

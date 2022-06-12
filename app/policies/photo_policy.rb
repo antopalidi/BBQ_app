@@ -4,13 +4,13 @@ class PhotoPolicy < ApplicationPolicy
   end
 
   def destroy?
-    owner?(record)
+    user_is_owner?(record)
   end
 
   private
 
-  def owner?(photo)
-    user.present? &&
-      ((photo.user == user) || (photo.event.try(:user) == user))
+  def user_is_owner?(photo)
+    #owner of photo or owner of event
+    user.present? && ((photo.user == user) || (photo.event.try(:user) == user))
   end
 end

@@ -4,14 +4,13 @@ class CommentPolicy < ApplicationPolicy
   end
 
   def destroy?
-    owner?(record)
+    user_is_owner?(record)
   end
 
   private
 
-  def owner?(comment)
-    user.present? &&
-      #owner of comment or owner of event
-      ((comment.try(:user) == user) || (comment.event.try(:user) == user))
+  def user_is_owner?(comment)
+    #owner of comment or owner of event
+    user.present? && ((comment.try(:user) == user) || (comment.event.try(:user) == user))
   end
 end
