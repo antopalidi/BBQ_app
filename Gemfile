@@ -34,11 +34,15 @@ gem 'cssbundling-rails'
 gem 'jbuilder'
 gem 'bootsnap', require: false
 
+gem 'resque'
+gem 'sidekiq'
+
 group :development, :test do
   gem 'debug', platforms: %i[ mri mingw x64_mingw ]
 end
 
 group :development do
+  gem 'letter_opener'
   gem 'web-console'
   gem 'sqlite3', '~> 1.4'
   gem "capistrano"
@@ -46,6 +50,7 @@ group :development do
   gem 'capistrano-passenger'
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
+  gem 'capistrano-resque', require: false
 end
 
 group :test do

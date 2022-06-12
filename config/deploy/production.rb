@@ -59,4 +59,8 @@
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
-server 'bbqfriends.co.uk', user: 'deploy', roles: %w[app db web]
+server 'bbqfriends.co.uk', user: 'deploy', roles: %w[app db web resque_worker]
+
+set :resque_environment_task, true
+
+set :workers, { "#{fetch(:application)}*" => 1 }

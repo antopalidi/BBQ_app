@@ -16,6 +16,9 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
+  config.active_job.queue_adapter = :resque
+  config.active_job.queue_name_prefix = "bbqfriends_#{Rails.env}"
+
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
   # config.require_master_key = true
@@ -50,7 +53,7 @@ Rails.application.configure do
 
   # Include generic and useful information about system operation, but avoid logging too much
   # information to avoid inadvertent exposure of personally identifiable information (PII).
-  config.log_level = :info
+  config.log_level = :warn
 
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
@@ -92,6 +95,8 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.perform_deliveries = true
+
+  config.action_mailer.default_options = { from: 'hi@bbqfriends.co.uk' }
 
   config.action_mailer.default_url_options = {host: 'bbqfriends.co.uk'}
 
