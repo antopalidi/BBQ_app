@@ -1,7 +1,7 @@
 class NewCommentJob < ApplicationJob
   queue_as :default
 
-  def perform(event, comment, email)
-    EventMailer.comment(event, comment, email).deliver_later
+  def perform(comment, email)
+    EventMailer.comment(comment, email).deliver_later
   end
 end
