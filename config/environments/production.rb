@@ -96,6 +96,8 @@ Rails.application.configure do
 
   config.action_mailer.perform_deliveries = true
 
+  config.action_mailer.default_options = { from: 'hi@bbqfriends.co.uk' }
+
   config.action_mailer.default_url_options = {host: 'bbqfriends.co.uk'}
 
   config.action_mailer.delivery_method = :mailjet
