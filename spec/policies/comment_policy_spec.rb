@@ -37,6 +37,10 @@ RSpec.describe CommentPolicy do
   context 'user is not a comment owner' do
     let(:another_user) { FactoryBot.create(:user) }
 
+    permissions :create? do
+      it { is_expected.to permit(another_user, Comment) }
+    end
+
     permissions :destroy? do
       it { is_expected.not_to permit(another_user, comment) }
     end
