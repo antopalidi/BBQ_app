@@ -274,8 +274,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   # Rails application example
 
-  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'],
-     token_params: { parse: :json }
+  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET']
 
 
 
