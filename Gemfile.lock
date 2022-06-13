@@ -138,6 +138,10 @@ GEM
     factory_bot_rails (6.2.0)
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
+    faraday (2.3.0)
+      faraday-net_http (~> 2.0)
+      ruby2_keywords (>= 0.0.4)
+    faraday-net_http (2.0.3)
     ffi (1.15.5)
     fog-aws (3.14.0)
       fog-core (~> 2.1)
@@ -162,6 +166,7 @@ GEM
     globalid (1.0.0)
       activesupport (>= 5.0)
     gmaps4rails (2.1.2)
+    hashie (5.0.0)
     http-accept (1.7.0)
     http-cookie (1.0.4)
       domain_name (~> 0.5)
@@ -178,6 +183,7 @@ GEM
       activesupport (>= 5.0.0)
     jsbundling-rails (1.0.2)
       railties (>= 6.0.0)
+    jwt (2.4.0)
     launchy (2.5.0)
       addressable (~> 2.7)
     letter_opener (1.8.1)
@@ -204,6 +210,7 @@ GEM
     mono_logger (1.1.1)
     msgpack (1.5.1)
     multi_json (1.15.0)
+    multi_xml (0.6.0)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
     net-imap (0.2.3)
@@ -229,6 +236,21 @@ GEM
       racc (~> 1.4)
     nokogiri (1.13.6-x86_64-linux)
       racc (~> 1.4)
+    oauth2 (1.4.9)
+      faraday (>= 0.17.3, < 3.0)
+      jwt (>= 1.0, < 3.0)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
+      rack (>= 1.2, < 3)
+    omniauth (2.1.0)
+      hashie (>= 3.4.6)
+      rack (>= 2.2.3)
+      rack-protection
+    omniauth-facebook (9.0.0)
+      omniauth-oauth2 (~> 1.2)
+    omniauth-oauth2 (1.7.2)
+      oauth2 (~> 1.4)
+      omniauth (>= 1.9, < 3)
     orm_adapter (0.5.0)
     pg (1.3.5)
     public_suffix (4.0.7)
@@ -407,6 +429,8 @@ DEPENDENCIES
   letter_opener
   lightbox2-rails
   mailjet
+  omniauth
+  omniauth-facebook
   pg
   puma (~> 5.0)
   pundit

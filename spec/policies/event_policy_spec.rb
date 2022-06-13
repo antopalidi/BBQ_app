@@ -2,8 +2,10 @@ require 'rails_helper'
 require 'pundit/rspec'
 
 RSpec.describe EventPolicy do
-  let(:user) { User.new }
-  let(:event) { Event.new(user: user) }
+  let(:user) { FactoryBot.create(:user) }
+  let(:event) { FactoryBot.create(:event) }
+  let(:event_with_pin) { FactoryBot.create(:event, user: user, pincode: "cat") }
+  let(:event_without_pin) { FactoryBot.create(:event, user: user, pincode: nil) }
 
   subject { EventPolicy }
 
@@ -14,8 +16,6 @@ RSpec.describe EventPolicy do
   end
 
   describe 'user is not event owner' do
-    let(:event) { Event.new }
-
     permissions :new?, :create? do
       it { is_expected.to permit(user, event) }
     end
@@ -27,12 +27,12 @@ RSpec.describe EventPolicy do
 
   describe 'user is event owner' do
     permissions :new?, :create?, :edit?, :update?, :destroy? do
-      it { is_expected.to permit(user, event) }
+      it { is_expected.to permit(user, event_without_pin) }
     end
   end
 
   describe 'event without pin' do
-    let(:event_context_without_pin) { EventContext.new(event: Event.new, pincode: nil) }
+    let(:event_context_without_pin) { EventContext.new(event: event, pincode: nil) }
 
     context 'when user is anonymous' do
       permissions :show? do
@@ -48,10 +48,9 @@ RSpec.describe EventPolicy do
   end
 
   describe 'event with pin' do
-    let(:event_context_without_pin) { EventContext.new(event: event, pincode: nil) }
-    let(:event_context_with_pin) { EventContext.new(event: event, pincode: 'cat') }
-    let(:event) { Event.new(pincode: 'cat', user: user) }
-    let(:another_user) { User.new }
+    let(:event_context_without_pin) { EventContext.new(event: event_with_pin, pincode: nil) }
+    let(:event_context_with_pin) { EventContext.new(event: event_with_pin, pincode: 'cat') }
+    let(:another_user) { FactoryBot.create(:user) }
 
     context 'when user is event owner' do
       permissions :show? do

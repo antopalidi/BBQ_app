@@ -35,6 +35,7 @@ en:
           attributes:
             user_email:
               wrong_email: ' is already registered. Log in to sign up with this email.'
+              creator_cant_subscribe: ' is already registered. Log in to sign up with this email.'
     attributes:
       user:
         email: 'Email'
@@ -126,12 +127,14 @@ en:
 
   event_mailer:
     comment:
+      subject: 'New comment'
       title: 'New comment'
       author: 'Author'
       event: 'Event'
       datetime: 'DateTime'
       owner: 'Owner'
     subscription:
+      subject: 'New follower'
       title: 'New follower'
       name: 'Name'
       email: 'Email'
@@ -140,6 +143,7 @@ en:
       datetime: 'DateTime'
       owner: 'Owner'
     photo:
+      subject: 'New photo'
       title: 'New photo'
       author: 'Author:'
       event: 'Event:'

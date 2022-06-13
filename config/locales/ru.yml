@@ -15,6 +15,7 @@ ru:
           attributes:
             user_email:
               wrong_email: ' уже зарегестрирован. Войдите, чтобы подписаться с этим email.'
+              creator_cant_subscribe: ' уже зарегестрирован. Войдите, чтобы подписаться с этим email.'
 
     # Перевод названий аттрибутов моделей
     attributes:
@@ -156,12 +157,14 @@ ru:
 
   event_mailer:
     comment:
+      subject: 'Новый комментарий'
       title: 'Новый комментарий'
       author: 'Автор'
       event: 'Событие'
       datetime: 'Состоится'
       owner: 'Организатор'
     subscription:
+      subject: 'Новая подписка'
       title: 'Новая подписка'
       name: 'Имя'
       email: 'Email'
@@ -170,6 +173,7 @@ ru:
       datetime: 'Состоится'
       owner: 'Организатор'
     photo:
+      subject: 'Новая фотография'
       title: 'Новая фотография'
       author: 'Автор:'
       event: 'Событие:'

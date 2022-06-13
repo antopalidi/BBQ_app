@@ -1,7 +1,7 @@
 <span class='me-2'><%= t('photos.photo.added') %></span>
 
 <%= render partial: 'users/user', object: photo.user %>
-<% if current_user_can_edit?(photo) %>
+<% if policy(photo).destroy? %>
   <%= button_to '❌',
                 event_photo_path(photo.event, photo),
                 form: { data: { turbo_confirm: t('photos.photo.destroy_confirm') } },
