@@ -13,6 +13,9 @@ gem 'devise-i18n'
 gem 'rails-i18n'
 gem 'pundit'
 
+gem 'omniauth'
+gem 'omniauth-facebook'
+
 gem 'geocoder'
 gem 'gmaps4rails'
 
