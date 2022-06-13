@@ -15,6 +15,7 @@ ru:
           attributes:
             user_email:
               wrong_email: ' уже зарегестрирован. Войдите, чтобы подписаться с этим email.'
+              creator_cant_subscribe: ' уже зарегестрирован. Войдите, чтобы подписаться с этим email.'
 
     # Перевод названий аттрибутов моделей
     attributes:
