@@ -20,4 +20,5 @@ Rails.application.routes.draw do
       post :show, on: :member
     end
   end
+  get '/politica', :to => redirect('/politica.html')
 end
