@@ -17,7 +17,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       flash[:notice] = I18n.t('devise.omniauth_callbacks.success', kind: 'Github')
       sign_in_and_redirect @user, event: :authentication
     else
-      session['device.github_data'] = request.env['omniauth.auth'].except('extra')
       omniauth_failure
     end
   end
@@ -25,7 +24,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   private
 
   def omniauth_failure
-    flash.now[:alert] = I18n.t('omniauth.failure')
+    flash[:error] = I18n.t('omniauth.failure')
     redirect_to new_user_registration_path
   end
 end
