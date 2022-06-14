@@ -1,15 +1,35 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to t('views.links.login'), new_session_path(resource_name) %><br />
+  <%= link_to t('views.links.login'), new_session_path(resource_name), class: 'btn btn-outline-secondary mb-3' %><br/>
+<% end %>
+
+<%- if devise_mapping.omniauthable? %>
+  <p>Войти с помощью:</p>
+  <div class="d-flex">
+    <%= button_to '',
+                  user_facebook_omniauth_authorize_path,
+                  method: :post, data: { turbo: false }, class: 'social-logo me-5',
+                  style: "background-image: url(#{asset_path('fb-logo.png')}); background-size: cover;" %>
+    <%= button_to '',
+                  user_github_omniauth_authorize_path,
+                  method: :post, data: { turbo: false }, class: 'social-logo mb-3',
+                  style: "background-image: url(#{asset_path('github-logo.png')}); background-size: cover;" %>
+  </div>
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to t('views.links.register'), new_registration_path(resource_name) %><br />
+  <%= link_to t('views.links.register'), new_registration_path(resource_name) %><br/>
 <% end %>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <%= link_to t('views.links.password_forgot'), new_password_path(resource_name) %><br />
+  <%= link_to t('views.links.password_forgot'), new_password_path(resource_name) %><br/>
 <% end %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-  <%= link_to t('views.links.confirmation_instructions'), new_confirmation_path(resource_name) %><br />
+  <%= link_to t('views.links.confirmation_instructions'), new_confirmation_path(resource_name) %><br/>
+<% end %>
+
+<%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+  <%= link_to t('devise.shared.links.didn_t_receive_confirmation_instructions'),
+              new_unlock_path(resource_name),
+              class: 'btn btn-outline-primary my-3' %>
 <% end %>
