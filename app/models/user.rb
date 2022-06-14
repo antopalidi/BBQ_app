@@ -14,7 +14,7 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
 
   validates :name, presence: true, length: { maximum: 35 }
-  validates :email, length: { maximum: 255 }, uniqueness: true, format: /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/
+  validates :email, length: { maximum: 255 }, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   def self.find_for_facebook_oauth(access_token)
     # Достаём email из токена
