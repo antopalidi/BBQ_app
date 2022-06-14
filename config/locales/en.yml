@@ -118,6 +118,7 @@ en:
         events: 'User events'
         no_events: 'This user has no events yet'
         enter: 'Sign in with:'
+        policy: 'Privacy Policy'
     events:
       new:
         title: 'New event'

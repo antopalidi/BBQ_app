@@ -1,6 +1,6 @@
 module PhotosHelper
   def event_photo(event)
-    photos = event.photos.persisted
+    photos = event.photos.includes([:user]).persisted
 
     if photos.any?
       photos.sample.photo.url

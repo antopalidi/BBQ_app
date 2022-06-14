@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   after_action :verify_authorized, only: %i[destroy edit show update]
 
   def index
-    @events = Event.all
+    @events = Event.includes(%i[user subscriptions subscribers]).all
     @coordinates = Gmaps4rails.build_markers(@events) do |event, marker|
       marker.lat event.latitude
       marker.lng event.longitude
