@@ -1,5 +1,19 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to t('views.links.login'), new_session_path(resource_name) %><br/>
+  <%= link_to t('views.links.login'), new_session_path(resource_name), class: 'btn btn-outline-secondary mb-3' %><br/>
+<% end %>
+
+<%- if devise_mapping.omniauthable? %>
+  <p>Войти с помощью:</p>
+  <div class="d-flex">
+    <%= button_to '',
+                  user_facebook_omniauth_authorize_path,
+                  method: :post, data: { turbo: false }, class: 'social-logo me-5',
+                  style: "background-image: url(#{asset_path('fb-logo.png')}); background-size: cover;" %>
+    <%= button_to '',
+                  user_github_omniauth_authorize_path,
+                  method: :post, data: { turbo: false }, class: 'social-logo mb-3',
+                  style: "background-image: url(#{asset_path('github-logo.png')}); background-size: cover;" %>
+  </div>
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
@@ -19,10 +33,3 @@
               new_unlock_path(resource_name),
               class: 'btn btn-outline-primary my-3' %>
 <% end %>
-<%- if devise_mapping.omniauthable? %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= button_to t( 'devise.shared.links.sign_in_with_provider', provider: OmniAuth::Utils.camelize(provider)),
-                  omniauth_authorize_path(resource_name, provider),
-                  method: :post, data: { turbo: false }, class: 'btn btn-outline-primary my-3' %><br/>
-  <% end -%>
-<% end -%>
