@@ -117,6 +117,7 @@ en:
       user:
         events: 'User events'
         no_events: 'This user has no events yet'
+        enter: 'Sign in with:'
     events:
       new:
         title: 'New event'
