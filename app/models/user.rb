@@ -42,13 +42,18 @@ class User < ApplicationRecord
     data = access_token.info
     user = User.where(email: data['email']).first
 
-    unless user
-      user = User.create(
-        email: data['email'],
-        password: Devise.friendly_token.first(16)
-      )
+    return user if user.present?
+
+    # Если не нашёлся, достаём провайдера, айдишник и урл
+    provider = access_token.provider
+    id = access_token.extra.raw_info.id
+    url = "https://github.com/#{id}"
+
+    where(url: url, provider: provider).first_or_create! do |user|
+      # Если создаём новую запись, прописываем email и пароль
+      user.email = email
+      user.password = Devise.friendly_token.first(16)
     end
-    user
   end
 
   private
