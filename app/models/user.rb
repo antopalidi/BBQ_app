@@ -38,6 +38,16 @@ class User < ApplicationRecord
     end
   end
 
+  def self.find_for_github_oauth(access_token)
+    data = access_token.info
+    user = User.where(email: data['email']).first
+    unless user
+      user = User.create(email: data['email'],
+                         password: Devise.friendly_token[0, 20])
+    end
+    user
+  end
+
   private
 
   def set_name
