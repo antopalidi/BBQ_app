@@ -3,7 +3,7 @@
 <% end %>
 
 <%- if devise_mapping.omniauthable? %>
-  <p>Войти с помощью:</p>
+  <p><%= t( 'views.text.user.enter') %></p>
   <div class="d-flex">
     <%= button_to '',
                   user_facebook_omniauth_authorize_path,
