@@ -39,12 +39,11 @@ class User < ApplicationRecord
   end
 
   def self.find_for_github_oauth(access_token)
-    data = access_token.info
-    user = where(email: data['email']).first
+    email = access_token.info.email
+    user = where(email: email).first
 
     return user if user.present?
 
-    # Если не нашёлся, достаём провайдера, айдишник и урл
     provider = access_token.provider
     id = access_token.extra.raw_info.id
     url = "https://github.com/#{id}"
