@@ -40,7 +40,7 @@ class User < ApplicationRecord
 
   def self.find_for_github_oauth(access_token)
     data = access_token.info
-    user = User.where(email: data['email']).first
+    user = where(email: data['email']).first
 
     return user if user.present?
 
