@@ -16,32 +16,47 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 35 }
   validates :email, length: { maximum: 255 }, uniqueness: true, format: /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/
 
-  class << self
-    def find_for_facebook_oauth(access_token)
-      find_for_oauth(access_token)
+  def self.find_for_facebook_oauth(access_token)
+    # Достаём email из токена
+    email = access_token.info.email
+    user = where(email: email).first
+
+    # Возвращаем, если нашёлся
+    return user if user.present?
+
+    # Если не нашёлся, достаём провайдера, айдишник и урл
+    provider = access_token.provider
+    id = access_token.extra.raw_info.id
+    url = "https://facebook.com/#{id}"
+
+    # Теперь ищем в базе запись по провайдеру и урлу
+    # Если есть, то вернётся, если нет, то будет создана новая
+    where(url: url, provider: provider).first_or_create! do |user|
+      # Если создаём новую запись, прописываем email и пароль
+      user.email = email
+      user.password = Devise.friendly_token.first(16)
     end
+  end
 
-    def find_for_github_oauth(access_token)
-      find_for_oauth(access_token)
-    end
+  def self.find_for_github_oauth(access_token)
+    # Достаём email из токена
+    email = access_token.info.email
+    user = where(email: email).first
 
-    private
+    # Возвращаем, если нашёлся
+    return user if user.present?
 
-    def find_for_oauth(access_token)
-      email = access_token.info.email
+    # Если не нашёлся, достаём провайдера, айдишник и урл
+    provider = access_token.provider
+    id = access_token.extra.raw_info.id
+    url = "https://facebook.com/#{id}"
 
-      user = where(email: email).first
-      return user if user.present?
-
-      provider = access_token.provider
-      provider_id = access_token.extra.raw_info.id
-      name = access_token.info.name
-
-      where(provider_id: provider_id, provider: provider).first_or_create! do |user|
-        user.name = name
-        user.email = email
-        user.password = Devise.friendly_token.first(16)
-      end
+    # Теперь ищем в базе запись по провайдеру и урлу
+    # Если есть, то вернётся, если нет, то будет создана новая
+    where(url: url, provider: provider).first_or_create! do |user|
+      # Если создаём новую запись, прописываем email и пароль
+      user.email = email
+      user.password = Devise.friendly_token.first(16)
     end
   end
 
