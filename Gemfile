@@ -57,6 +57,7 @@ group :development do
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
   gem 'capistrano-resque', require: false
+  gem 'bullet', group: 'development'
 end
 
 group :test do
