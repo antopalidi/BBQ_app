@@ -1,9 +1,21 @@
 # BBQ App
+
+![RubyOnRails](https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
+
 The application in which you can organize an event with your friends.
 
 Deploy: https://bbqfriends.co.uk
 
 Rails 7.0.2., Ruby 3.1.1.
+
+#### Usage:
+
+Clone repo:
+
+```
+git clone https://github.com/antopalidi/BBQ_app
+```
+Go to the app folder 
 
 run:
 - `bundle`
