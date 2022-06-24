@@ -67,6 +67,29 @@ production:
   password: <user_password>
 ```
 
+- Add file `.env` to the root of the project:
+
+```
+MAILJET_API_KEY=
+MAILJET_SECRET_KEY=
+MAILJET_SENDER=
+
+GOOGLE_MAPS_API_KEY=
+
+S3_ACCESS_KEY=
+S3_BUCKET_NAME=
+S3_BUCKET_REGION=
+S3_SECRET_KEY=
+
+SECRET_KEY_BASE=
+
+FACEBOOK_APP_ID=
+FACEBOOK_APP_SECRET=
+
+GITHUB_KEY=
+GITHUB_SECRET=
+```
+
 run:
 - `rails db:migrate`
 - `yarn install`
