@@ -36,10 +36,9 @@ Deployment: Capistrano
 git clone https://github.com/antopalidi/BBQ_app
 ```
 - Go to the app folder
+- Run file `bin/setup`
 
 ###### Setup your API keys and database:
 
 `.env`,
 `config/database.yml`
-
-Run file `bin/setup` 
