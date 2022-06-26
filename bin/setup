@@ -33,9 +33,9 @@ FileUtils.chdir APP_ROOT do
   system! "bin/rails log:clear tmp:clear"
 
   puts "\n== Add yarn =="
-  system! "bin/yarn install"
-  system! "bin/yarn build"
-  system! "bin/yarn build:css"
+  system! "yarn install"
+  system! "yarn build"
+  system! "yarn build:css"
 
   puts "\n== Restarting application server =="
   system! "bin/rails restart"
